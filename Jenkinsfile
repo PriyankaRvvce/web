@@ -12,19 +12,19 @@ pipeline {
 
         stage('Build / Syntax Check') {
             steps {
-                bat 'python -m py_compile app.py test_app.py'
+                bat 'python -m py_compile app1.py test-app1.py'
             }
         }
 
         stage('Run Application') {
             steps {
-                bat 'python app.py'
+                bat 'python app1.py'
             }
         }
 
         stage('Test') {
             steps {
-                bat 'python -m unittest -v test_app'
+                bat 'python -m unittest -v test-app1'
             }
         }
     }
